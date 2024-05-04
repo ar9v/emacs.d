@@ -16,4 +16,4 @@
 
 (use-package rainbow-mode
   :ensure t
-  :hook (conf-space-mode . rainbow-mode))
+  :hook (conf-unix-mode . rainbow-mode))
