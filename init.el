@@ -11,3 +11,9 @@
 
 (load-theme 'modus-vivendi)
 
+(use-package magit
+  :ensure t)
+
+(use-package rainbow-mode
+  :ensure t
+  :hook (conf-space-mode . rainbow-mode))
