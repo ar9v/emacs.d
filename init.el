@@ -1,15 +1,33 @@
-(setq custom-file (locate-user-emacs-file "custom.el"))
+(use-package emacs
+  :config
+  ;; Custom interface config
+  (setq custom-file (locate-user-emacs-file "custom.el"))
 
-(when (file-exists-p custom-file)
-  (load custom-file))
+  (when (file-exists-p custom-file)
+    (load custom-file))
 
+  ;; Aesthetics
+  (setq use-short-answers t)
 
-(setq use-short-answers t)
+  (set-scroll-bar-mode nil)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
 
-(set-scroll-bar-mode nil)
-(tool-bar-mode -1)
+  (setq-default indent-tabs-mode nil)
 
-(load-theme 'modus-vivendi)
+  (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . js-json-mode))
+
+  ;; Modus themes
+  (require-theme 'modus-themes)
+
+  (setq modus-themes-vivendi-color-overrides
+	'((bg-main . "#111111")))
+
+  (load-theme 'modus-vivendi))
+
+(use-package css-mode
+  :custom
+  (css-indent-offset 2))
 
 (use-package magit
   :ensure t)
