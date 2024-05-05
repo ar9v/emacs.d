@@ -35,3 +35,7 @@
 (use-package rainbow-mode
   :ensure t
   :hook (conf-unix-mode . rainbow-mode))
+
+(use-package json
+  :custom
+  (js-indent-level 2))
