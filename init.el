@@ -36,7 +36,13 @@
 
 (use-package rainbow-mode
   :ensure t
-  :hook (conf-unix-mode . rainbow-mode))
+  :hook (conf-mode . rainbow-mode)
+  :config
+  ;; Just turning `rainbow-mode' on gets you hex colors, but not
+  ;; rgb(a) colors. Adding the conf modes to this list gets us
+  ;; all `rainbow-mode' colorizing.
+  (dolist (mode '(conf-mode conf-space-mode conf-unix-mode conf-colon-mode))
+    (push mode rainbow-html-colors-major-mode-list)))
 
 (use-package json
   :custom
