@@ -1,4 +1,6 @@
 (use-package emacs
+  :bind
+  (("C-x C-S-f" . recentf-open))
   :config
   ;; Custom interface config
   (setq custom-file (locate-user-emacs-file "custom.el"))
