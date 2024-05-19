@@ -1,3 +1,27 @@
+(defconst NOTES-DIR "~/Documents/notes/"
+  "The directory where my notes live.")
+
+(defun argv/goto-note ()
+  "Open a file in ~/Documents/notes."
+  (interactive)
+
+  (argv/find-file-in NOTES-DIR))
+
+(defun argv/goto-init ()
+  "Open init.el."
+  (interactive)
+
+  (find-file user-init-file))
+
+
+(defun argv/find-file-in (dir)
+  "Jump to a file in directory `DIR'."
+  (let* ((file (completing-read
+                "File: "
+                (directory-files dir nil))))
+
+    (find-file (concat dir file))))
+
 (use-package emacs
   :bind
   (("C-x C-S-f" . recentf-open))
