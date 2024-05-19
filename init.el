@@ -71,3 +71,9 @@
 (use-package json
   :custom
   (js-indent-level 2))
+
+(use-package markdown-mode
+  :ensure t)
+
+(use-package inf-ruby
+  :ensure t)
