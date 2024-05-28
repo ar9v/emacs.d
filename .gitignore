@@ -1,3 +1,6 @@
+# Custom interface
+custom.el
+
 # Compiled
 *.elc
 
@@ -14,3 +17,5 @@
 /projects
 /elpa
 /recentf
+/transient
+history
