@@ -83,6 +83,10 @@
 (use-package magit
   :ensure t)
 
+(use-package conf-mode
+  :bind (("C-," . backward-page)
+         ("C-." . forward-page)))
+
 (use-package rainbow-mode
   :ensure t
   :hook (conf-mode . rainbow-mode)
