@@ -68,13 +68,26 @@
 
   (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . js-json-mode))
 
-  ;; Modus themes
+  ;;;; Modus themes
   (require-theme 'modus-themes)
 
   (setq modus-themes-vivendi-color-overrides
         '((bg-main . "#111111")))
 
-  (load-theme 'modus-vivendi))
+  (load-theme 'modus-vivendi)
+
+  ;; Keybindings
+  ;; TODO: consider windmove(?)
+  (keymap-global-set "M-o" 'other-window)
+  (keymap-global-set "M-i" 'imenu)
+
+  (global-display-line-numbers-mode 1)
+  (column-number-mode 1)
+
+  (setq isearch-allow-motion t)
+
+  ;;;; Hippie-expand
+  (keymap-global-set "M-/" 'hippie-expand))
 
 (use-package css-mode
   :custom
