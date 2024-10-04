@@ -19,3 +19,6 @@ custom.el
 /recentf
 /transient
 history
+
+# Rest
+site-lisp/
