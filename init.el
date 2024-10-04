@@ -155,3 +155,6 @@
 (use-package savehist
   :init
   (savehist-mode))
+
+(use-package scribble
+  :load-path "site-lisp/scribble")
