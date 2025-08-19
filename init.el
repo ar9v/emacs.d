@@ -1,3 +1,10 @@
+;; Gets us stuff from
+;; https://www.gnu.org/software/emacs/manual/html_node/dired-x/Advanced-Mark-Commands.html
+;;
+;; E.g. `* .` (`dired-mark-extension`)
+(require 'dired-x)
+
+
 (defconst NOTES-DIR "~/Documents/notes/"
   "The directory where my notes live.")
 
