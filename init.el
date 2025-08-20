@@ -135,3 +135,14 @@
 
 (use-package scribble
   :load-path "site-lisp/scribble")
+
+(use-package racket-mode
+  :init (require 'racket-xp)
+  :hook (racket-mode . racket-xp-mode))
+
+(use-package clojure-mode)
+
+(use-package cider)
+
+(use-package corfu
+  :init (global-corfu-mode))
