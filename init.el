@@ -87,15 +87,13 @@
   :custom
   (css-indent-offset 2))
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 (use-package conf-mode
   :bind (("C-," . backward-page)
          ("C-." . forward-page)))
 
 (use-package rainbow-mode
-  :ensure t
   :hook (conf-mode . rainbow-mode)
   :config
   ;; Just turning `rainbow-mode' on gets you hex colors, but not
@@ -108,11 +106,9 @@
   :custom
   (js-indent-level 2))
 
-(use-package markdown-mode
-  :ensure t)
+(use-package markdown-mode)
 
-(use-package inf-ruby
-  :ensure t)
+(use-package inf-ruby)
 
 ;; TODO: Figure out how to make nano play nice with these
 ;; Enable vertico
@@ -126,8 +122,7 @@
 ;;         completion-category-defaults nil
 ;;         completion-category-overrides '((file (styles partial-completion)))))
 
-(use-package consult
-  :ensure t)
+(use-package consult)
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
