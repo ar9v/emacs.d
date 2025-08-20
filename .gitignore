@@ -20,6 +20,7 @@ custom.el
 /transient
 history
 /image-dired
+/racket-mode/
 
 # Rest
 site-lisp/
