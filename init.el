@@ -31,7 +31,9 @@
 
 (use-package emacs
   :bind
-  (("C-x C-S-f" . recentf-open))
+  (("C-x C-S-f" . recentf-open)
+   ("C-x C-b"   . ibuffer))
+
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
   ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
