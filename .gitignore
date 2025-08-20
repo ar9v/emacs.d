@@ -14,13 +14,17 @@ custom.el
 *.~undo-tree
 
 # Package artifacts
-/projects
-/elpa
-/recentf
-/transient
-history
+/bookmarks
+/eln-cache/
+/elpa/
+/eshell/
+/history
 /image-dired
+/projects
 /racket-mode/
+/recentf
+/tramp
+/transient/
 
 # Rest
 site-lisp/
