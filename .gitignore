@@ -19,6 +19,7 @@ custom.el
 /recentf
 /transient
 history
+/image-dired
 
 # Rest
 site-lisp/
