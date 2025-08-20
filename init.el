@@ -69,34 +69,19 @@
   ;; Aesthetics
   (setq use-short-answers t)
 
-  (set-scroll-bar-mode nil)
-  (tool-bar-mode -1)
-  (menu-bar-mode -1)
-
-  (setq-default indent-tabs-mode nil)
-
   (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . js-json-mode))
-
-  ;;;; Modus themes
-  (require-theme 'modus-themes)
-
-  (setq modus-themes-vivendi-color-overrides
-        '((bg-main . "#111111")))
-
-  (load-theme 'modus-vivendi)
 
   ;; Keybindings
   ;; TODO: consider windmove(?)
   (keymap-global-set "M-o" 'other-window)
   (keymap-global-set "M-i" 'imenu)
 
-  (global-display-line-numbers-mode 1)
-  (column-number-mode 1)
-
   (setq isearch-allow-motion t)
 
   ;;;; Hippie-expand
   (keymap-global-set "M-/" 'hippie-expand))
+(use-package nano
+  :load-path "lisp/nano")
 
 (use-package css-mode
   :custom
@@ -129,33 +114,17 @@
 (use-package inf-ruby
   :ensure t)
 
+;; TODO: Figure out how to make nano play nice with these
 ;; Enable vertico
-(use-package vertico
-  :ensure t
-  :init
-  (vertico-mode)
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
+;; (use-package vertico
+;;   :init
+;;   (vertico-mode))
 
-  ;; Show more candidates
-  ;; (setq vertico-count 20)
-
-  ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
-
-  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  ;; (setq vertico-cycle t)
-  )
-
-;; Optionally use the `orderless' completion style.
-(use-package orderless
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+;; (use-package orderless
+;;   :init
+;;   (setq completion-styles '(orderless basic)
+;;         completion-category-defaults nil
+;;         completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package consult
   :ensure t)
