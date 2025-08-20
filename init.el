@@ -79,7 +79,11 @@
   (setq isearch-allow-motion t)
 
   ;;;; Hippie-expand
-  (keymap-global-set "M-/" 'hippie-expand))
+  (keymap-global-set "M-/" 'hippie-expand)
+
+  ;; Backups
+  (setq make-backup-files nil))
+
 (use-package nano
   :load-path "lisp/nano")
 
