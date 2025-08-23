@@ -74,7 +74,12 @@
     (load custom-file))
 
   ;; Aesthetics
+  (set-scroll-bar-mode nil)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+
   (setq use-short-answers t)
+  (setq-default indent-tabs-mode nil)
 
   (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . js-json-mode))
 
