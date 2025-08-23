@@ -67,11 +67,7 @@
   (setq read-extended-command-predicate #'command-completion-default-include-p)
 
   :config
-  ;; Custom interface config
-  (setq custom-file (locate-user-emacs-file "custom.el"))
-
-  (when (file-exists-p custom-file)
-    (load custom-file))
+  (setq custom-file (make-temp-file "emacs-custom-"))
 
   ;; Aesthetics
   (set-scroll-bar-mode nil)
@@ -99,7 +95,7 @@
 
 (use-package doric-themes
   :config
-  (load-theme 'doric-dark))
+  (load-theme 'doric-dark t))
 
 (use-package whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode 1))
