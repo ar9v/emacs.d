@@ -98,16 +98,19 @@
 
 
 (use-package css-mode
+  :defer t
   :custom
   (css-indent-offset 2))
 
 (use-package magit)
 
 (use-package conf-mode
+  :defer t
   :bind (("C-," . backward-page)
          ("C-." . forward-page)))
 
 (use-package rainbow-mode
+  :defer t
   :hook (conf-mode . rainbow-mode)
   :config
   ;; Just turning `rainbow-mode' on gets you hex colors, but not
@@ -117,12 +120,15 @@
     (push mode rainbow-html-colors-major-mode-list)))
 
 (use-package json
+  :defer t
   :custom
   (js-indent-level 2))
 
-(use-package markdown-mode)
+(use-package markdown-mode
+  :defer t)
 
-(use-package inf-ruby)
+(use-package inf-ruby
+  :defer t)
 
 (use-package vertico
   :init
@@ -146,11 +152,14 @@
 
 (use-package racket-mode
   :init (require 'racket-xp)
-  :hook (racket-mode . racket-xp-mode))
+  :hook (racket-mode . racket-xp-mode)
+  :defer t)
 
-(use-package clojure-mode)
+(use-package clojure-mode
+  :defer t)
 
-(use-package cider)
+(use-package cider
+  :defer t)
 
 (use-package corfu
   :init (global-corfu-mode))
