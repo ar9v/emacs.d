@@ -103,6 +103,11 @@
 
 (use-package whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode 1))
+
+(use-package dired
+  :config
+  (setq dired-listing-switches "-alh"))
+
 (use-package css-mode
   :defer t
   :custom
