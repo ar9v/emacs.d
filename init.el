@@ -2,7 +2,14 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/dired-x/Advanced-Mark-Commands.html
 ;;
 ;; E.g. `* .` (`dired-mark-extension`)
+(require 'package)
 (require 'dired-x)
+
+
+(add-to-list
+ 'package-archives
+ '("melpa" . "https://stable.melpa.org/packages/")
+ t)
 
 
 (defconst NOTES-DIR "~/Documents/notes/"
