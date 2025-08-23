@@ -94,7 +94,8 @@
   (keymap-global-set "M-/" 'hippie-expand)
 
   ;; Backups
-  (setq make-backup-files nil))
+  (setq make-backup-files nil)
+  (auto-save-mode -1))
 
 
 (use-package css-mode
