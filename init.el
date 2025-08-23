@@ -97,6 +97,9 @@
   (setq make-backup-files nil)
   (auto-save-mode -1))
 
+(use-package doric-themes
+  :config
+  (load-theme 'doric-dark))
 
 (use-package css-mode
   :defer t
