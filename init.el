@@ -101,6 +101,8 @@
   :config
   (load-theme 'doric-dark))
 
+(use-package whitespace-cleanup-mode
+  :init (global-whitespace-cleanup-mode 1))
 (use-package css-mode
   :defer t
   :custom
