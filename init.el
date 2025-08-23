@@ -108,6 +108,11 @@
   :config
   (setq dired-listing-switches "-alh"))
 
+(use-package executable
+  :defer t
+  :config
+  (setq executable-prefix-env t))
+
 (use-package css-mode
   :defer t
   :custom
