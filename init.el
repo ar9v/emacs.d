@@ -84,8 +84,6 @@
   ;; Backups
   (setq make-backup-files nil))
 
-(use-package nano
-  :load-path "lisp/nano")
 
 (use-package css-mode
   :custom
