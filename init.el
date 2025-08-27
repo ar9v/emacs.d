@@ -139,7 +139,11 @@
 (use-package markdown-mode
   :defer t)
 
+;; Ruby
 (use-package inf-ruby
+  :hook (ruby-mode . inf-ruby-minor-mode))
+
+(use-package yari
   :defer t)
 
 (use-package vertico
