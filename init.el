@@ -146,6 +146,12 @@
 (use-package yari
   :defer t)
 
+(use-package ruby-compilation
+  :hook (ruby-mode . ruby-compilation-minor-mode)
+  :bind (:map ruby-mode-map
+              ("C-c m c" . ruby-compilation-this-test)
+              ("C-c m C" . ruby-compilation-this-buffer)))
+
 (use-package vertico
   :init
   (vertico-mode))
