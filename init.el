@@ -147,8 +147,9 @@
   :defer t)
 
 (use-package ruby-compilation
-  :hook (ruby-mode . ruby-compilation-minor-mode)
+  :after (ruby-mode)
   :bind (:map ruby-mode-map
+              ("C-x t" . nil)
               ("C-c m c" . ruby-compilation-this-test)
               ("C-c m C" . ruby-compilation-this-buffer)))
 
