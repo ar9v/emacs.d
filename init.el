@@ -152,6 +152,8 @@
               ("C-c m c" . ruby-compilation-this-test)
               ("C-c m C" . ruby-compilation-this-buffer)))
 
+(use-package bundler)
+
 (use-package vertico
   :init
   (vertico-mode))
