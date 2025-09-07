@@ -160,6 +160,7 @@
               ("C-c m C" . ruby-compilation-this-buffer)))
 
 (use-package bundler)
+(use-package rspec-mode)
 
 (use-package vertico
   :init
