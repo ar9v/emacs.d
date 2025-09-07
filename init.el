@@ -139,6 +139,12 @@
 (use-package markdown-mode
   :defer t)
 
+(use-package eglot
+  :defer t
+  :config
+  (add-to-list 'eglot-server-programs
+               '((ruby-mode ruby-ts-mode) "ruby-lsp")))
+
 ;; Ruby
 (use-package inf-ruby
   :hook (ruby-mode . inf-ruby-minor-mode))
