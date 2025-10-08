@@ -97,6 +97,12 @@
   :config
   (load-theme 'doric-dark t))
 
+(set-face-attribute
+ 'default
+ nil
+ :height 120
+ :family "Iosevka Mono")
+
 (use-package whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode 1))
 
