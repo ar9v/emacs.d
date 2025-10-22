@@ -70,6 +70,11 @@
   (setq custom-file (make-temp-file "emacs-custom-"))
 
   ;; Aesthetics
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (select-frame frame)
+              (load-theme 'doric-water :no-confirm)))
+
   (set-scroll-bar-mode nil)
   (tool-bar-mode -1)
   (menu-bar-mode -1)
@@ -94,8 +99,7 @@
   (auto-save-mode -1))
 
 (use-package doric-themes
-  :config
-  (load-theme 'doric-dark t))
+  :ensure t)
 
 (set-face-attribute
  'default
