@@ -189,6 +189,9 @@
   :init
   (savehist-mode))
 
+(use-package paredit
+  :hook (racket-mode emacs-lisp-mode))
+
 (use-package scribble
   :load-path "site-lisp/scribble")
 
