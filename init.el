@@ -79,6 +79,18 @@
   (tool-bar-mode -1)
   (menu-bar-mode -1)
 
+  (set-face-attribute
+   'default
+   nil
+   :height 120
+   :family "Iosevka Mono")
+
+  (set-face-attribute
+   'fixed-pitch
+   nil
+   :height 120
+   :family "Iosevka Mono")
+
   (setq use-short-answers t)
   (setq-default indent-tabs-mode nil)
 
@@ -100,12 +112,6 @@
 
 (use-package doric-themes
   :ensure t)
-
-(set-face-attribute
- 'default
- nil
- :height 120
- :family "Iosevka Mono")
 
 (use-package whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode 1))
