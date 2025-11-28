@@ -11,7 +11,6 @@
  '("melpa" . "https://melpa.org/packages/")
  t)
 
-
 (defconst NOTES-DIR "~/Documents/notes/"
   "The directory where my notes live.")
 
@@ -27,6 +26,16 @@
 
   (find-file user-init-file))
 
+(defun argv/load-project-setup ()
+  "Loads a `project-setup.el' file in the project.
+
+This is intended to be used with `C-x p p'. If the project has a `project-setup.el' file,
+it runs it."
+
+  (interactive)
+  (if (file-exists-p "project-setup.el")
+      (load-file "project-setup.el")
+    (message "No project-setup.el found. Nothing to do.")))
 
 (defun argv/find-file-in (dir)
   "Jump to a file in directory `DIR'."
