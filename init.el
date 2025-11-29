@@ -14,6 +14,9 @@
 (defconst NOTES-DIR "~/Documents/notes/"
   "The directory where my notes live.")
 
+(defconst SKELETON-SIGIL "\"_\""
+  "A sigil inserted by skeletons, which makes jumping around interest points easy.")
+
 (defun argv/goto-note ()
   "Open a file in ~/Documents/notes."
   (interactive)
@@ -37,6 +40,20 @@ it runs it."
       (load-file "project-setup.el")
     (message "No project-setup.el found. Nothing to do.")))
 
+(defun argv/next-skeleton-sigil ()
+  "search-forward to the next SKELETON-SIGIL, or wrap around."
+  (interactive)
+
+  (or (search-forward SKELETON-SIGIL nil t)
+      (progn (goto-char (point-min)) (search-forward SKELETON-SIGIL))))
+
+(defun argv/previous-skeleton-sigil ()
+  "search-backward to the next SKELETON-SIGIL, or wrap around."
+  (interactive)
+
+  (or (search-backward SKELETON-SIGIL nil t)
+      (progn (goto-char (point-max)) (search-backward SKELETON-SIGIL))))
+
 (defun argv/find-file-in (dir)
   "Jump to a file in directory `DIR'."
   (let* ((file (completing-read
@@ -48,7 +65,10 @@ it runs it."
 (use-package emacs
   :bind
   (("C-x C-S-f" . recentf-open)
-   ("C-x C-b"   . ibuffer))
+   ("C-x C-b"   . ibuffer)
+   :map prog-mode-map
+   ("C-$" . argv/next-skeleton-sigil)
+   ("M-$" . argv/previous-skeleton-sigil))
 
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
