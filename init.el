@@ -253,3 +253,14 @@ it runs it."
   (add-to-list 'project-switch-commands
                '(argv/load-project-setup "Load setup.el" "l")
                t))
+
+;; TODO: make this not suck
+(defun dupe-sexp ()
+  (interactive)
+
+  (mark-sexp)
+  (copy-region-as-kill (region-beginning) (region-end))
+  (forward-sexp)
+  (newline-and-indent)
+  (yank)
+  (backward-sexp))
