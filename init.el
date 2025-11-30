@@ -36,9 +36,12 @@ This is intended to be used with `C-x p p'. If the project has a `project-setup.
 it runs it."
 
   (interactive)
-  (if (file-exists-p "project-setup.el")
-      (load-file "project-setup.el")
-    (message "No project-setup.el found. Nothing to do.")))
+
+  (let* ((project-dir (project-root (project-current)))
+         (setup-filename (concat project-dir "project-setup.el")))
+    (if (file-exists-p setup-filename)
+        (load-file setup-filename)
+      (message "No project-setup.el found in %s. Nothing to do." project-dir))))
 
 (defun argv/next-skeleton-sigil ()
   "search-forward to the next SKELETON-SIGIL, or wrap around."
@@ -243,3 +246,10 @@ it runs it."
 
 (use-package corfu
   :init (global-corfu-mode))
+
+(use-package project
+  :defer t
+  :config
+  (add-to-list 'project-switch-commands
+               '(argv/load-project-setup "Load setup.el" "l")
+               t))
