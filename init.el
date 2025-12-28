@@ -105,7 +105,7 @@ it runs it."
   (add-hook 'after-make-frame-functions
             (lambda (frame)
               (select-frame frame)
-              (load-theme 'doric-water :no-confirm)))
+              (load-theme 'doric-obsidian :no-confirm)))
 
   (set-scroll-bar-mode nil)
   (tool-bar-mode -1)
