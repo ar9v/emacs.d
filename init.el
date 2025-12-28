@@ -114,8 +114,8 @@ it runs it."
   (set-face-attribute
    'default
    nil
-   :height 120
-   :family "Iosevka Mono")
+   :height 140
+   :family "Iosevka Nerd Font")
 
   (set-face-attribute
    'fixed-pitch
