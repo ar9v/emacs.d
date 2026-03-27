@@ -1,0 +1,8 @@
+# key: func
+# name: Define a function
+# --
+${1:void} ${2:fun_name}(${3:args}) {
+   $0
+
+   return return_value;
+}
