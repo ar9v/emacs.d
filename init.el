@@ -256,6 +256,10 @@ it runs it."
                '(argv/load-project-setup "Load setup.el" "l")
                t))
 
+(use-package yasnippet
+  :defer t
+  :init (yas-global-mode 1))
+
 ;; TODO: make this not suck
 (defun dupe-sexp ()
   (interactive)
