@@ -5,6 +5,8 @@
 (require 'package)
 (require 'dired-x)
 
+;; Useful for debugging
+;; (setq debug-on-error t)
 
 (add-to-list
  'package-archives
