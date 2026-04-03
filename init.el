@@ -186,6 +186,8 @@ it runs it."
   :custom
   (js-indent-level 2))
 
+(use-package yaml-mode)
+
 (use-package markdown-mode
   :defer t)
 
