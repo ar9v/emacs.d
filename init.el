@@ -211,6 +211,7 @@ it runs it."
 
 (use-package bundler)
 (use-package rspec-mode)
+(use-package minitest-mode)
 
 (use-package vertico
   :init
