@@ -261,6 +261,11 @@ it runs it."
   :defer t
   :init (yas-global-mode 1))
 
+(use-package org
+  :defer t
+  :config
+  (plist-put org-format-latex-options :scale 1.5))
+
 ;; TODO: make this not suck
 (defun dupe-sexp ()
   (interactive)
