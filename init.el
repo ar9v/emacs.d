@@ -198,6 +198,14 @@ it runs it."
                '((ruby-mode ruby-ts-mode) "ruby-lsp")))
 
 ;; Ruby
+(defun argv/ruby/frozen-string-literal ()
+  (interactive)
+
+  (save-excursion
+    (goto-char (point-min))
+    (insert "# frozen_string_literal: true")
+    (newline 2 t)))
+
 (use-package inf-ruby
   :hook (ruby-mode . inf-ruby-minor-mode))
 
@@ -211,9 +219,11 @@ it runs it."
               ("C-c m c" . ruby-compilation-this-test)
               ("C-c m C" . ruby-compilation-this-buffer)))
 
+(use-package rubocop)
+
 (use-package bundler)
 (use-package rspec-mode)
-(use-package minitest-mode)
+(use-package minitest)
 
 (use-package vertico
   :init
