@@ -223,7 +223,10 @@ it runs it."
 
 (use-package bundler)
 (use-package rspec-mode)
-(use-package minitest)
+(use-package minitest
+  :hook (ruby-mode . minitest-mode)
+  :config
+  (minitest-install-snippets))
 
 (use-package vertico
   :init
